@@ -1,0 +1,43 @@
+[build-system]
+requires = ["scikit-build-core>=0.10", "nanobind>=2.0"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "harmonypy"
+version = "2.0.0"
+description = "A data integration algorithm."
+readme = "README.md"
+license = "GPL-3.0-or-later"
+requires-python = ">=3.9"
+authors = [
+    { name = "Kamil Slowikowski", email = "kslowikowski@gmail.com" },
+    { name = "John Arevalo", email = "johnarevalo@gmail.com" }
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+    "numpy",
+    "pandas",
+    "pytest>=8.4.2",
+    "scikit-learn",
+    "scipy",
+    "torch",
+]
+
+[project.urls]
+Homepage = "https://github.com/slowkow/harmonypy"
+
+[tool.scikit-build]
+wheel.packages = ["harmonypy"]
+build.verbose = true
+build-dir = "/tmp/harmonypy-build/{wheel_tag}"
+ninja.make-fallback = true
+
+[tool.scikit-build.cmake.define]
+CMAKE_BUILD_TYPE = "Release"

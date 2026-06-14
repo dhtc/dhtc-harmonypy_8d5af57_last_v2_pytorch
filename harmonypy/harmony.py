@@ -73,7 +73,7 @@ def run_harmony(
     verbose=True,
     random_state=0,
     device=None,
-    backend="auto"
+    backend="cpu"
 ):
     """Run Harmony batch effect correction.
     
